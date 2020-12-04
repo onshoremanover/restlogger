@@ -9,8 +9,8 @@ def main():
 
     my_function('hello world')
 
-    my_object = MyClass('Thomas')
-    my_object.say_Name()
+    my_object = MyClass('Lukas')
+    my_object.say_name()
 
 if __name__ == '__main__':
     main()
