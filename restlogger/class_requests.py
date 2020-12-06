@@ -12,7 +12,6 @@ class Request_Class():
         print('---------------------------')
         print(type(r_dict))
         print("---------------------------")
-        print(r_dict)
 
         return r_dict
 
