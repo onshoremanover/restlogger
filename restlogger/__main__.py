@@ -21,6 +21,9 @@ def main():
 
     my_dict = my_object2.set_request()
     my_object2.parse_json(my_dict)
+    
+    print(my_dict['name'])
+    
 
 if __name__ == '__main__':
     main()
