@@ -3,6 +3,7 @@ from .classmodule import My_Class
 from .funcmodule import my_function
 from .class_requests import Request_Class
 from .class_logger import Logger_Class
+from .test_requests import Requests_Test
 
 def main():
     print('====================================')
@@ -19,9 +20,10 @@ def main():
 
 
     my_dict = my_object2.set_request()
-    print('---------test-------------')
-    print(my_dict)
     my_object2.parse_json(my_dict)
+    
+    print(my_dict['name'])
+    
 
 if __name__ == '__main__':
     main()
