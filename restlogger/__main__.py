@@ -7,7 +7,7 @@ from .class_requests import Request_Class
 from .class_logger import Logger_Class
 from .test_requests import Requests_Test
 
-logging.basicConfig(filename='test.csv', level=logging.DEBUG, format='%(asctime)s;%(levelname)s;%(message)s')
+logging.basicConfig(filename='checker.log', level=logging.DEBUG, format='%(asctime)s;%(levelname)s;%(message)s')
 
 def main():
     logging.debug('====================================')
@@ -27,6 +27,9 @@ def main():
     my_object2.parse_json(my_dict)
     
     logging.debug(my_dict['name'])
+    
+    my_object3= Logger_Class(my_dict)
+    my_object3.set_content()    
     
 
 if __name__ == '__main__':
