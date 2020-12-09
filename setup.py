@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
         name = 'restlogger',
-        version = '0.1.0',
+        version = '0.1.1',
         packages = ['restlogger'],
         entry_points = {
             'console_scripts': [

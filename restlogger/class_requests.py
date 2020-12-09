@@ -1,5 +1,6 @@
 import requests
 import json
+import logging
 
 class Request_Class():
     def __init__(self, url_address):
@@ -9,15 +10,15 @@ class Request_Class():
         req_data = requests.get(self.url_address)
 
         r_dict = req_data.json()
-        print('---------------------------')
-        print(type(r_dict))
-        print("---------------------------")
+        logging.debug('---------------------------')
+        logging.debug(type(r_dict))
+        logging.debug("---------------------------")
 
         return r_dict
 
     def parse_json(self, dict):
-        print('--------test2--------')
-        print(type(dict))
+        logging.debug('--------test2--------')
+        logging.debug(type(dict))
         
 
 

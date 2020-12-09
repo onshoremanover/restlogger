@@ -1,0 +1,26 @@
+2020-12-09 02:02:37,299;DEBUG;====================================
+2020-12-09 02:02:37,300;DEBUG;in main
+2020-12-09 02:02:37,300;DEBUG;count of args :: 0
+2020-12-09 02:02:37,300;DEBUG;text from my_function :: hello world
+2020-12-09 02:02:37,300;DEBUG;name is Lukas
+2020-12-09 02:02:37,306;DEBUG;Starting new HTTP connection (1): api.openweathermap.org:80
+2020-12-09 02:02:37,359;DEBUG;http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Zurich,CHZH&appid=3836093dde650898eb014e6f27304646 HTTP/1.1" 200 538
+2020-12-09 02:02:37,362;DEBUG;---------------------------
+2020-12-09 02:02:37,362;DEBUG;<class 'dict'>
+2020-12-09 02:02:37,362;DEBUG;---------------------------
+2020-12-09 02:02:37,363;DEBUG;--------test2--------
+2020-12-09 02:02:37,363;DEBUG;<class 'dict'>
+2020-12-09 02:02:37,363;DEBUG;Zurich
+2020-12-09 02:04:43,921;DEBUG;====================================
+2020-12-09 02:04:43,921;DEBUG;in main
+2020-12-09 02:04:43,921;DEBUG;count of args :: 0
+2020-12-09 02:04:43,921;DEBUG;text from my_function :: hello world
+2020-12-09 02:04:43,922;DEBUG;name is Lukas
+2020-12-09 02:04:43,927;DEBUG;Starting new HTTP connection (1): api.openweathermap.org:80
+2020-12-09 02:04:43,980;DEBUG;http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Zurich,CHZH&appid=3836093dde650898eb014e6f27304646 HTTP/1.1" 200 538
+2020-12-09 02:04:43,982;DEBUG;---------------------------
+2020-12-09 02:04:43,982;DEBUG;<class 'dict'>
+2020-12-09 02:04:43,983;DEBUG;---------------------------
+2020-12-09 02:04:43,983;DEBUG;--------test2--------
+2020-12-09 02:04:43,983;DEBUG;<class 'dict'>
+2020-12-09 02:04:43,984;DEBUG;Zurich

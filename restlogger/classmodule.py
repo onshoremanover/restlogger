@@ -7,6 +7,6 @@ class My_Class():
         self.name = name
 
     def say_name(self):
-        print('name is {}'.format(self.name))
+        logging.debug('name is {}'.format(self.name))
 
 
