@@ -1,36 +1,43 @@
-import sys
-import unittest
-import logging
-from .classmodule import My_Class
-from .funcmodule import my_function
-from .class_requests import Request_Class
-from .class_logger import Logger_Class
-from .test_requests import Requests_Test
+import sys, getopt
+import requests, logging
+import json
 
-logging.basicConfig(filename='checker.log', level=logging.DEBUG, format='%(asctime)s;%(levelname)s;%(message)s')
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s;%(levelname)s;%(message)s')
+
+file_handler = logging.FileHandler('l_restlogger.csv')
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+
+
+class My_Logger_Class():
+    def __init__(self, url):
+        self.url = url
+
+    def set_request(self):
+        req_data = requests.get(self.url)
+
+        return req_data.json()
+
+    def set_content(self, req_data):
+        city_name = req_data['name']
+        
 
 def main():
-    logging.debug('====================================')
-    logging.debug('in main')
     args = sys.argv[1:]
-    logging.debug('count of args :: {}'.format(len(args)))
-
-    my_function('hello world')
-
-    my_object = My_Class('Lukas')
-    my_object.say_name()
-
-    my_object2 = Request_Class('http://api.openweathermap.org/data/2.5/weather?q=Zurich,CHZH&appid=3836093dde650898eb014e6f27304646')
+    logger.debug('count of args :: {}'.format(len(args)))
 
 
-    my_dict = my_object2.set_request()
-    my_object2.parse_json(my_dict)
-    
-    logging.debug(my_dict['name'])
-    
-    my_object3= Logger_Class(my_dict)
-    my_object3.set_content()    
-    
+    my_object = My_Logger_Class('http://api.openweathermap.org/data/2.5/weather?q=Zurich,CHZH&appid=3836093dde650898eb014e6f27304646')
+
+
+    my_dict = my_object.set_request()
+    my_object.set_content(my_dict)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    main()
+
