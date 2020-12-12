@@ -28,8 +28,18 @@ class My_Logger_Class():
     def set_content(self, req_data):
         uberdict = self.argu['xpath']
         key = self.argu['key']
-        requested_data = req_data[uberdict][key]
+
+        if uberdict == '':
+            requested_data = req_data[key]
+        elif key == '':
+            requested_data = req_data[uberdict]
+        else:
+            requested_data = req_data[uberdict][key]
+
         print(requested_data)
         print("set_content done")
         return requested_data
 
+
+    def logging(self, requested_data):
+        pass
