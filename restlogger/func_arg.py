@@ -1,21 +1,25 @@
 import sys, getopt, io
 
-def my_argument_function():
+def my_argument_function(argv):
+    freq = ''
+    url = ''
+    xpath = ''
     try:
-        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+        opts, args = getopt.getopt(argv,"hf:u:",["freq=","url=","xpath="])
     except getopt.GetoptError:
-        print('test.py -i <inputfile> -o <outputfile>')
+        print('-f <freq> -u <url> -x <xpath>')
         sys.exit()
     for opt, arg in opts:
         if opt == '-h':
-            print('test.py -i <inputfile> -o <outputfile>')
+            print('test.py -f <freq> -u <url> -x <xpath>')
             sys.exit()
-        elif opt in ("-i", "--ifile"):
-            inputfile = arg
-        elif opt in ("-o", "--ofile"):
-            outputfile = arg
-    print('Input file is ',inputfile)
-    print('Output file is ',outputfile)
-
-
+        elif opt in ("-f", "--freq"):
+            freq = arg
+            print('Freq is: ',freq)
+        elif opt in ("-u", "--url"):
+            url = arg
+            print('URL is: ',url)
+        elif opt in ("-x", "--xpath"):
+            xpath = arg
+            print('XPath is: ',xpath)
 

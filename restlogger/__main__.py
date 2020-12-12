@@ -24,7 +24,7 @@ def main():
     for arg in args:
         print('passsed argument :: {}'.format(arg))
 
-    
+    my_argument_function(sys.argv[1:]) 
 
     my_object = My_Logger_Class('http://api.openweathermap.org/data/2.5/weather?q=Zurich,CHZH&appid=3836093dde650898eb014e6f27304646')
 
