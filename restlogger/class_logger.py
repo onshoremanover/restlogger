@@ -26,8 +26,10 @@ class My_Logger_Class():
         return req_data.json()
 
     def set_content(self, req_data):
-        print(req_data)
-        city_name = req_data[1]['title']
-        print(city_name)
+        uberdict = self.argu['xpath']
+        key = self.argu['key']
+        requested_data = req_data[uberdict][key]
+        print(requested_data)
         print("set_content done")
+        return requested_data
 

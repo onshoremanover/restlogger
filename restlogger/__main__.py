@@ -31,6 +31,7 @@ def main():
 
     my_dict = my_object.set_request()
     city_name = my_object.set_content(my_dict)
+
     logger.debug(city_name)
 
     #help(My_Logger_Class)
