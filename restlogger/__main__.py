@@ -1,38 +1,36 @@
-import sys, getopt, io
-import requests, logging
+import sys, getopt, io, re
+import requests, logging, threading, time
+from queue import Queue
 import json, csv
 from .func_arg import my_argument_function
 from .class_logger import My_Logger_Class
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter('%(asctime)s|%(levelname)s|%(message)s')
-
-file_handler = logging.FileHandler('log_restlogger.csv')
-file_handler.setFormatter(formatter)
-
-logger.addHandler(file_handler)
 
 
 def main():
     print("main started")
     args = sys.argv[1:]
-    logger.debug('count of args :: {}'.format(len(args)))
     print('count of args :: {}'.format(len(args)))
 
     for arg in args:
-        print('passsed argument :: {}'.format(arg))
+        print('passed argument :: {}'.format(arg))
 
     argu = my_argument_function(sys.argv[1:]) 
 
     my_object = My_Logger_Class(argu)
 
-
     my_dict = my_object.set_request()
-    city_name = my_object.set_content(my_dict)
+    my_information = my_object.set_content(my_dict)
+   
+    my_object.set_header()
 
-    logger.debug(city_name)
+    yes_change = re.search("y", argu['change'], flags = re.I)
+
+    if yes_change:
+        my_object.logging_changes(my_information)
+    else:
+        my_object.logging_fixed(my_information)
+
 
     #help(My_Logger_Class)
     print("main done")
