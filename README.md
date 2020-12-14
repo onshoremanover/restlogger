@@ -3,12 +3,7 @@ CONTENTS OF THIS FILE
 
  * Introduction
  * Installation
- * Starting the Bot
-  * Starting the Bot with Drush
-  * Starting the Bot with bot_start.php
- * Using the Bot
- * IRC Message Hooks
- * Other IRC Hooks
+ * Using the App
  * Design Decisions
 
 
@@ -17,6 +12,8 @@ INTRODUCTION
 
 This is a small (but timecostly) school project that was quite fun. It does not do really much.
 You can give it a url (should give out a json) and it will log the atribute you provide.
+
+
 
 
 
@@ -31,15 +28,20 @@ It is a packaged CLI package so it does not need a python3 infront of it when ex
 
 Otherwise it can be cloned directly from git and there is a install.sh script that probably should be executed before running restlogger.
 
-The Arguments that can be given are:
 
+
+USING THE APP
+-------------
+
+The Arguments that can be given are:
+-h or --help: Gives you the help menu
+-f or --freq: Define sample rate in [s]
+-u or --url: Provide the full url
+-x or --xpath: The path to the key in the json responds
+-k or --key: What should be logged
+-c or --change: Logging only when change happened can be selected
 
 The program can be stopped by pressing Ctrl+c (control+c on Mac)
-
-
-
-USING THE BOT
--------------
 
 Read the licence.
 
