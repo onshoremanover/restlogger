@@ -1,1 +1,4 @@
-2020-12-13 12:02:38,004|DEBUG|count of args :: 2
+# Logging in file log_restlogger.csv beginning at 14:36:22
+YYYY-MM-DD hh-mm-ss,mil Level name
+2020-12-15 14:36:57,867|DEBUG|Zurich
+2020-12-15 14:37:02,966|DEBUG|Zurich
